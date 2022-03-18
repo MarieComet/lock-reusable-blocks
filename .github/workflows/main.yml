@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy to wordpress.org
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    tags:
+      - "*"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  tag:
+    name: New Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: WordPress Plugin Deploy
+        uses: MarieComet/wordpress-actions/dotorg-plugin-deploy@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GH }}
+          SLUG: lock-reusable-blocks
+          NAME: Lock Reusable Blocks
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
