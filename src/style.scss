@@ -1,0 +1,39 @@
+.wp-reusable-block-locked {
+    position: relative;
+
+    &__wrapper {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        text-align: center;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            cursor: not-allowed;
+        }
+    }
+
+    &__edit-link {
+        z-index: 1;
+        position: relative;
+        color: white !important;
+    }
+
+    > .wp-block {
+        opacity: .3;
+    }
+
+	.block-editor-block-list__layout > * {
+		pointer-events: none;
+	}
+
+	.block-list-appender {
+		display: none;
+	}
+}
