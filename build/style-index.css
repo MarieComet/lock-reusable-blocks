@@ -21,13 +21,16 @@
   top: 0;
   cursor: not-allowed;
 }
-.wp-reusable-block-locked__edit-link {
+.wp-reusable-block-locked__edit-link, .wp-reusable-block-locked__convert-link {
   z-index: 1;
   position: relative;
+  margin: 5px;
+}
+.wp-reusable-block-locked__edit-link {
   color: white !important;
 }
 .wp-reusable-block-locked > .wp-block {
-  opacity: 0.2;
+  opacity: 0.15;
 }
 .wp-reusable-block-locked .block-editor-block-list__layout > * {
   pointer-events: none;

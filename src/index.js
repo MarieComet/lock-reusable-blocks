@@ -4,6 +4,8 @@ const { createHigherOrderComponent } = wp.compose;
 const { addQueryArgs } = wp.url;
 const { isReusableBlock } = wp.blocks; 
 const { Button } = wp.components;
+const { useDispatch } = wp.data;
+import { store as reusableBlocksStore } from '@wordpress/reusable-blocks';
 
 import './style.scss';
 
@@ -13,9 +15,14 @@ import './style.scss';
  const withLockedReusableBlocks = createHigherOrderComponent( ( BlockEdit ) => {
     return ( props ) => {
 
-        const { attributes } = props;
+        const { attributes, clientId } = props;
 
         if ( props.isSelected && isReusableBlock( props ) && attributes.ref ) {
+
+            const {
+                __experimentalConvertBlockToStatic: convertBlockToStatic,
+            } = useDispatch( reusableBlocksStore );
+
             return (
                 <div className="wp-block wp-reusable-block-locked">
                     <div className="wp-reusable-block-locked__wrapper">
@@ -29,7 +36,14 @@ import './style.scss';
                             target="_blank"
 						    rel="noopener noreferrer"
                         >
-                            { __( 'Edit Reusable Block', 'lock-reusable-blocks' ) }
+                            { __( 'Edit reusable block', 'lock-reusable-blocks' ) }
+                        </Button>
+                        <Button
+                            onClick={ () => convertBlockToStatic( clientId ) }
+                            variant="secondary"
+                            className="wp-reusable-block-locked__convert-link"
+                        >
+                            { __( 'Convert to regular blocks', 'lock-reusable-blocks' ) }
                         </Button>
                     </div>
                     <BlockEdit { ...props } />

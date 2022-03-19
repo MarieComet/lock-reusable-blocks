@@ -11,7 +11,9 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
+/* harmony import */ var _wordpress_reusable_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/reusable-blocks */ "@wordpress/reusable-blocks");
+/* harmony import */ var _wordpress_reusable_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_reusable_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
 
 const {
   __
@@ -28,6 +30,10 @@ const {
 const {
   Button
 } = wp.components;
+const {
+  useDispatch
+} = wp.data;
+
 
 /**
  * Add custom HTML to reusable blocks.
@@ -36,10 +42,14 @@ const {
 const withLockedReusableBlocks = createHigherOrderComponent(BlockEdit => {
   return props => {
     const {
-      attributes
+      attributes,
+      clientId
     } = props;
 
     if (props.isSelected && isReusableBlock(props) && attributes.ref) {
+      const {
+        __experimentalConvertBlockToStatic: convertBlockToStatic
+      } = useDispatch(_wordpress_reusable_blocks__WEBPACK_IMPORTED_MODULE_1__.store);
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
         className: "wp-block wp-reusable-block-locked"
       }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -53,7 +63,11 @@ const withLockedReusableBlocks = createHigherOrderComponent(BlockEdit => {
         }),
         target: "_blank",
         rel: "noopener noreferrer"
-      }, __('Edit Reusable Block', 'lock-reusable-blocks'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockEdit, props));
+      }, __('Edit reusable block', 'lock-reusable-blocks')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Button, {
+        onClick: () => convertBlockToStatic(clientId),
+        variant: "secondary",
+        className: "wp-reusable-block-locked__convert-link"
+      }, __('Convert to regular blocks', 'lock-reusable-blocks'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockEdit, props));
     } else {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockEdit, props);
     }
@@ -82,6 +96,16 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module) {
 
 module.exports = window["wp"]["element"];
+
+/***/ }),
+
+/***/ "@wordpress/reusable-blocks":
+/*!****************************************!*\
+  !*** external ["wp","reusableBlocks"] ***!
+  \****************************************/
+/***/ (function(module) {
+
+module.exports = window["wp"]["reusableBlocks"];
 
 /***/ })
 

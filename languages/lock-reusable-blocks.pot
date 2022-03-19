@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-03-18T18:35:34+01:00\n"
+"POT-Creation-Date: 2022-03-19T08:57:45+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.3.0\n"
 "X-Domain: lock-reusable-blocks\n"
@@ -26,8 +26,14 @@ msgstr ""
 msgid "Marie Comet"
 msgstr ""
 
-#: build/index.js:60
-#: src/index.js:35
-#: build/index.js:35
-msgid "Edit Reusable Block"
+#: build/index.js:66
+#: src/index.js:39
+#: build/index.js:39
+msgid "Edit reusable block"
+msgstr ""
+
+#: build/index.js:70
+#: src/index.js:46
+#: build/index.js:46
+msgid "Convert to regular blocks"
 msgstr ""

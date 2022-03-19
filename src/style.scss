@@ -19,14 +19,18 @@
         }
     }
 
-    &__edit-link {
+    &__edit-link, &__convert-link {
         z-index: 1;
         position: relative;
+        margin: 5px;
+    }
+
+    &__edit-link {
         color: white !important;
     }
 
     > .wp-block {
-        opacity: .2;
+        opacity: .15;
     }
 
 	.block-editor-block-list__layout > * {
