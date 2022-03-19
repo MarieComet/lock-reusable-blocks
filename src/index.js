@@ -1,4 +1,3 @@
-/* Add custom attribute to paragraph block, in Toolbar */
 const { __ } = wp.i18n;
 
 const { createHigherOrderComponent } = wp.compose;

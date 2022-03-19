@@ -15,7 +15,7 @@
 if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 if ( ! defined( 'LRB_VERSION' ) ) {
-    define( 'LRB_VERSION', '0.0.1' );
+    define( 'LRB_VERSION', '0.1.0' );
 }
 if ( ! defined( 'LRB_PATH' ) ) {
     define( 'LRB_PATH', plugin_dir_path( __FILE__ ) );
