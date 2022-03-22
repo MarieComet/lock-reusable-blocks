@@ -40,7 +40,7 @@ import './style.scss';
                         </Button>
                         <Button
                             onClick={ () => convertBlockToStatic( clientId ) }
-                            variant="secondary"
+                            variant="primary"
                             className="wp-reusable-block-locked__convert-link"
                         >
                             { __( 'Convert to regular blocks', 'lock-reusable-blocks' ) }

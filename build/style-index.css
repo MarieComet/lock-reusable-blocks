@@ -25,8 +25,6 @@
   z-index: 1;
   position: relative;
   margin: 5px;
-}
-.wp-reusable-block-locked__edit-link {
   color: white !important;
 }
 .wp-reusable-block-locked > .wp-block {

@@ -1,1 +1,1 @@
-<?php return array('dependencies' => array('wp-element', 'wp-reusable-blocks'), 'version' => '7362f7031f87539bff2120160015e209');
+<?php return array('dependencies' => array('wp-element', 'wp-reusable-blocks'), 'version' => '8238108c0206a600fe2b306650629ffe');

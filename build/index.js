@@ -65,7 +65,7 @@ const withLockedReusableBlocks = createHigherOrderComponent(BlockEdit => {
         rel: "noopener noreferrer"
       }, __('Edit reusable block', 'lock-reusable-blocks')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Button, {
         onClick: () => convertBlockToStatic(clientId),
-        variant: "secondary",
+        variant: "primary",
         className: "wp-reusable-block-locked__convert-link"
       }, __('Convert to regular blocks', 'lock-reusable-blocks'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockEdit, props));
     } else {
