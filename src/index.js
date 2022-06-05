@@ -19,6 +19,16 @@ import './style.scss';
 
         if ( props.isSelected && isReusableBlock( props ) && attributes.ref ) {
 
+            let showConvert = true, showEdit = true;
+            if ( typeof lrb !== 'undefined' ) {
+                if ( lrb.hide_convert_button && '1' === lrb.hide_convert_button ) {
+                    showConvert = false;
+                }
+                if ( lrb.hide_edit_button && '1' === lrb.hide_edit_button ) {
+                    showEdit = false;
+                }
+            }
+
             const {
                 __experimentalConvertBlockToStatic: convertBlockToStatic,
             } = useDispatch( reusableBlocksStore );
@@ -26,25 +36,29 @@ import './style.scss';
             return (
                 <div className="wp-block wp-reusable-block-locked">
                     <div className="wp-reusable-block-locked__wrapper">
-                        <Button
-                            variant="primary"
-                            className="wp-reusable-block-locked__edit-link"
-                            href={ addQueryArgs( 'post.php', {
-                                post: attributes.ref,
-                                action: 'edit'
-                            } ) }
-                            target="_blank"
-						    rel="noopener noreferrer"
-                        >
-                            { __( 'Edit reusable block', 'lock-reusable-blocks' ) }
-                        </Button>
-                        <Button
-                            onClick={ () => convertBlockToStatic( clientId ) }
-                            variant="primary"
-                            className="wp-reusable-block-locked__convert-link"
-                        >
-                            { __( 'Convert to regular blocks', 'lock-reusable-blocks' ) }
-                        </Button>
+                        { showConvert && 
+                            <Button
+                                variant="primary"
+                                className="wp-reusable-block-locked__edit-link"
+                                href={ addQueryArgs( 'post.php', {
+                                    post: attributes.ref,
+                                    action: 'edit'
+                                } ) }
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                { __( 'Edit reusable block', 'lock-reusable-blocks' ) }
+                            </Button>
+                        }
+                        { showEdit && 
+                            <Button
+                                onClick={ () => convertBlockToStatic( clientId ) }
+                                variant="primary"
+                                className="wp-reusable-block-locked__convert-link"
+                            >
+                                { __( 'Convert to regular blocks', 'lock-reusable-blocks' ) }
+                            </Button>
+                        }
                     </div>
                     <BlockEdit { ...props } />
                 </div>

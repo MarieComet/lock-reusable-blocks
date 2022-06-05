@@ -3,7 +3,7 @@ Contributors: chaton666
 Tags: lock, reusable, block
 Requires at least: 5.0
 Tested up to: 6.0
-Stable tag: 0.3.0
+Stable tag: 0.4.0
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 
@@ -16,6 +16,24 @@ Editing reusable blocks in posts is locked, and you have access to two actions w
 - Edit the reusable block (opens the block editing page in a new tab)
 - Convert to regular blocks (native action)
 
+Options are availables in Settings > Writing screen to hide Edit and Convert reusable blocks buttons in block overlay.
+
 == Screenshots ==
 
 1. Reusable Block locked in the editor.
+2. Settings screen.
+
+== Changelog ==
+ 
+= 0.4.0 =
+* Add options in Settings > Writing screen to allow admin disable Edit and Convert reusable blocks buttons in block overlay.
+Props to @btxtiger for the idea.
+
+= 0.3.0 =
+* Convert to regular blocks button: switch to primary style
+
+= 0.2.0 =
+* Add button to convert reusable block to regular blocks 
+
+= 0.1.0 =
+* First release

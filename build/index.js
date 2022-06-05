@@ -47,6 +47,19 @@ const withLockedReusableBlocks = createHigherOrderComponent(BlockEdit => {
     } = props;
 
     if (props.isSelected && isReusableBlock(props) && attributes.ref) {
+      let showConvert = true,
+          showEdit = true;
+
+      if (typeof lrb !== 'undefined') {
+        if (lrb.hide_convert_button && '1' === lrb.hide_convert_button) {
+          showConvert = false;
+        }
+
+        if (lrb.hide_edit_button && '1' === lrb.hide_edit_button) {
+          showEdit = false;
+        }
+      }
+
       const {
         __experimentalConvertBlockToStatic: convertBlockToStatic
       } = useDispatch(_wordpress_reusable_blocks__WEBPACK_IMPORTED_MODULE_1__.store);
@@ -54,7 +67,7 @@ const withLockedReusableBlocks = createHigherOrderComponent(BlockEdit => {
         className: "wp-block wp-reusable-block-locked"
       }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
         className: "wp-reusable-block-locked__wrapper"
-      }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Button, {
+      }, showConvert && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Button, {
         variant: "primary",
         className: "wp-reusable-block-locked__edit-link",
         href: addQueryArgs('post.php', {
@@ -63,7 +76,7 @@ const withLockedReusableBlocks = createHigherOrderComponent(BlockEdit => {
         }),
         target: "_blank",
         rel: "noopener noreferrer"
-      }, __('Edit reusable block', 'lock-reusable-blocks')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Button, {
+      }, __('Edit reusable block', 'lock-reusable-blocks')), showEdit && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Button, {
         onClick: () => convertBlockToStatic(clientId),
         variant: "primary",
         className: "wp-reusable-block-locked__convert-link"
