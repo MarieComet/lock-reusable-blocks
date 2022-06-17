@@ -36,7 +36,7 @@ import './style.scss';
             return (
                 <div className="wp-block wp-reusable-block-locked">
                     <div className="wp-reusable-block-locked__wrapper">
-                        { showConvert && 
+                        { showEdit && 
                             <Button
                                 variant="primary"
                                 className="wp-reusable-block-locked__edit-link"
@@ -50,7 +50,7 @@ import './style.scss';
                                 { __( 'Edit reusable block', 'lock-reusable-blocks' ) }
                             </Button>
                         }
-                        { showEdit && 
+                        { showConvert && 
                             <Button
                                 onClick={ () => convertBlockToStatic( clientId ) }
                                 variant="primary"
