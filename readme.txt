@@ -3,7 +3,7 @@ Contributors: chaton666
 Tags: lock, reusable, block
 Requires at least: 5.0
 Tested up to: 6.0
-Stable tag: 0.4.0
+Stable tag: 0.5.0
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 
@@ -24,6 +24,9 @@ Options are availables in Settings > Writing screen to hide Edit and Convert reu
 2. Settings screen.
 
 == Changelog ==
+
+= 0.5.0 =
+* Fix hide Edit/Convert buttons settings are inverted
  
 = 0.4.0 =
 * Add options in Settings > Writing screen to allow admin disable Edit and Convert reusable blocks buttons in block overlay.
