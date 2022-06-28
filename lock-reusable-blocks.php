@@ -4,7 +4,7 @@
  * Description:       Lock Reusable Blocks in the editor to avoid unintentional global changes.
  * Requires at least: 5.8
  * Requires PHP:      7.0
- * Version:           0.5.0
+ * Version:           0.6.0
  * Author:            Marie Comet
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -47,14 +47,14 @@ function lrb_admin_settings() {
         __( 'Hide "Convert to regular blocks" button', 'lrb' ),
         'lrb_options_hide_convert_button_cb',
         'writing',
-        'lrb_options_section', 
+        'lrb_options_section'
     );
     add_settings_field(
         'hide_edit_reusable_block_button', 
         __( 'Hide "Edit reusable block" button', 'lrb' ),
         'lrb_options_hide_edit_button_cb',
         'writing',
-        'lrb_options_section', 
+        'lrb_options_section'
     );
 }
 
