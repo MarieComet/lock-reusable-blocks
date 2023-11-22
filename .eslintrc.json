@@ -1,20 +1,14 @@
 {
-	"root": true,
-	"extends": [
-		"plugin:@wordpress/eslint-plugin/recommended-with-formatting"
-	],
-	"env": {
-		"browser": true,
-		"es6": true,
-		"jquery": true
-	},
-	"parser": "@babel/eslint-parser",
-	"parserOptions": {
-		"requireConfigFile": false,
-		"ecmaVersion": 12,
-		"sourceType": "module"
-	},
-	"globals": {
-		"lrb": true
-	}
+    "root": true,
+    "extends": [
+        "plugin:@wordpress/eslint-plugin/recommended-with-formatting"
+    ],
+    "globals": {
+        "lrb": true
+    },
+    "rules": {
+        "indent": [ "error", 4 ],
+        "react/jsx-indent": [ "error", 4 ],
+        "react/jsx-indent-props": [ "error", 4 ]
+    }
 }
