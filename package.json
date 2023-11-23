@@ -1,24 +1,34 @@
 {
-	"name": "lock-reusable-blocks",
-	"version": "0.1.0",
-	"description": "Lock Reusable Blocks in the editor to avoid unintentional global changes.",
-	"author": "Marie Comet",
-	"license": "GPL-2.0-or-later",
-	"main": "build/index.js",
-	"scripts": {
-		"build": "wp-scripts build src/index.js",
-		"format": "wp-scripts format",
-		"lint:css": "wp-scripts lint-style",
-		"lint:js": "wp-scripts lint-js",
-		"start": "wp-scripts start src/index.js",
-		"packages-update": "wp-scripts packages-update"
-	},
-	"dependencies": {
-		"@wordpress/block-editor": "^8.0.9",
-		"@wordpress/blocks": "^11.1.4",
-		"@wordpress/i18n": "^4.2.4"
-	},
-	"devDependencies": {
-		"@wordpress/scripts": "^19.2.2"
-	}
+    "name": "lock-reusable-blocks",
+    "version": "0.6.0",
+    "description": "Lock Reusable Blocks in the editor to avoid unintentional global changes.",
+    "author": "Marie Comet",
+    "license": "GPL-2.0-or-later",
+    "main": "build/index.js",
+    "scripts": {
+        "build": "wp-scripts build src/index.js",
+        "format": "wp-scripts format",
+        "lint:css": "wp-scripts lint-style",
+        "lint:js": "wp-scripts lint-js",
+        "start": "wp-scripts start src/index.js",
+        "packages-update": "wp-scripts packages-update"
+    },
+    "engines": {
+        "node": ">=14",
+        "npm": ">=7"
+    },
+    "dependencies": {
+        "@wordpress/blocks": "^12.23.0",
+        "@wordpress/components": "^25.12.0",
+        "@wordpress/compose": "^6.23.0",
+        "@wordpress/data": "^9.16.0",
+        "@wordpress/hooks": "^3.46.0",
+        "@wordpress/i18n": "^4.46.0",
+        "@wordpress/reusable-blocks": "^4.23.0",
+        "@wordpress/url": "^3.47.0"
+    },
+    "devDependencies": {
+        "@wordpress/eslint-plugin": "^17.3.0",
+        "@wordpress/scripts": "^26.17.0"
+    }
 }

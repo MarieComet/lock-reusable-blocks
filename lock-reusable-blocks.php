@@ -43,14 +43,14 @@ function lrb_admin_settings() {
     register_setting( 'writing', 'hide_convert_reusable_block_button' );
     register_setting( 'writing', 'hide_edit_reusable_block_button' );
     add_settings_field(
-        'hide_convert_reusable_block_button', 
+        'hide_convert_reusable_block_button',
         __( 'Hide "Convert to regular blocks" button', 'lrb' ),
         'lrb_options_hide_convert_button_cb',
         'writing',
         'lrb_options_section'
     );
     add_settings_field(
-        'hide_edit_reusable_block_button', 
+        'hide_edit_reusable_block_button',
         __( 'Hide "Edit reusable block" button', 'lrb' ),
         'lrb_options_hide_edit_button_cb',
         'writing',
@@ -90,16 +90,20 @@ function lrb_options_hide_edit_button_cb() {
  * Enqueue admin scripts
  */
 function lrb_gutenberg_editor_scripts() {
+    $asset_file = include( LRB_PATH . 'build/index.asset.php' );
+
     wp_enqueue_style(
         'lrb-gutenberg',
         LRB_URL . 'build/style-index.css',
-        LRB_VERSION
+        [],
+        $asset_file['version']
     );
+
     wp_register_script(
         'lrb-editor-script',
         LRB_URL . 'build/index.js',
-        [ 'wp-blocks', 'wp-dom', 'wp-dom-ready', 'wp-edit-post' ],
-        LRB_VERSION
+        $asset_file['dependencies'],
+        $asset_file['version']
     );
     wp_enqueue_script( 'lrb-editor-script' );
     wp_localize_script( 'lrb-editor-script', 'lrb', [
